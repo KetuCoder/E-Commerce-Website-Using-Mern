@@ -32,7 +32,7 @@ export const UpdateCart = async (req,res) => {
         const userData = await UserModel.findById(userId);
         let cartData = await userData.cartData;
 
-        cartData[itemId][size] = quantity
+        cartData[itemId][sizes] = quantity
         await UserModel.findByIdAndUpdate(userId,{cartData});
         res.json({ Success : true , Message : "Cart Updated !" });
     } catch (error) {
