@@ -24,6 +24,10 @@ try {
     console.log(error);
 }
 
+app.use('/',(req,res)=>{
+    res.send("Api Working !");
+})
+
 app.use('/api/user',userrouter);
 app.use('/api/product',ProductRouter);
 app.use('/api/cart',CartRouter);
